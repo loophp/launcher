@@ -14,15 +14,16 @@ use Tivie\OS\Detector;
 class Launcher
 {
     /**
+     * Open a resource on your operating system.
+     *
      * @param string ...$resources
+     *   The resource. (URL, filepath, etc etc)
      *
      * @throws \Exception
      */
     public static function open(string ...$resources): void
     {
-        if (null === $baseCommand = self::getCommand()) {
-            throw new \Exception('Unable to find the proper command for your operating system.');
-        }
+        $baseCommand = self::getCommand();
 
         foreach ($resources as $resource) {
             $command = $baseCommand;
@@ -40,24 +41,40 @@ class Launcher
     }
 
     /**
+     * Get the command to run.
+     *
+     * @throws \Exception
+     *
      * @return null|array
      */
     protected static function getCommand(): ?array
     {
         $os = new Detector();
 
+        $command = $checkCommand = null;
+
         if ($os->isOSX()) {
-            return ['open'];
+            $command = 'open';
+            $checkCommand = 'command -v';
+        } elseif ($os->isUnixLike()) {
+            $command = 'xdg-open';
+            $checkCommand = 'command -v';
+        } elseif ($os->isWindowsLike()) {
+            $command = 'start';
+            $checkCommand = 'where';
         }
 
-        if ($os->isUnixLike()) {
-            return ['xdg-open'];
+        if (null === $command) {
+            throw new \Exception('Unable to find the operating system.');
         }
 
-        if ($os->isWindowsLike()) {
-            return ['start'];
+        $process = new Process([$checkCommand . ' ' . $command]);
+        $process->run();
+
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
         }
 
-        return null;
+        return [$command];
     }
 }
