@@ -1,0 +1,54 @@
+{
+    "name": "drupol/launcher",
+    "type": "library",
+    "description": "Try to automatically open a file or a resource with the default OS application.",
+    "keywords": [
+        "launcher"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pol Dellaiera",
+            "email": "pol.dellaiera@protonmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "symfony/process": "^4.3",
+        "tivie/php-os-detector": "^1.1"
+    },
+    "require-dev": {
+        "drupol/php-conventions": "^1",
+        "drupol/phpspec-annotation": "^1",
+        "graphp/graphviz": "^0.2",
+        "infection/infection": "^0.12",
+        "leanphp/phpspec-code-coverage": "^4",
+        "phpbench/phpbench": "^0.16",
+        "phpspec/phpspec": "^4",
+        "phptaskman/changelog": "^1.0",
+        "scrutinizer/ocular": "^1"
+    },
+    "config": {
+        "platform": {
+            "php": "7.1.28"
+        },
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "drupol\\launcher\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "drupol\\launcher\\tests\\": "tests/src/"
+        }
+    },
+    "scripts": {
+        "apigen": "./vendor/bin/apigen generate src --destination build/docs",
+        "bench": "./vendor/bin/phpbench run --report=aggregate --store --precision=3",
+        "grumphp": "./vendor/bin/grumphp run",
+        "infection": "./vendor/bin/infection run -j 10",
+        "scrutinizer": "./vendor/bin/ocular code-coverage:upload --format=php-clover build/logs/clover.xml"
+    }
+}
