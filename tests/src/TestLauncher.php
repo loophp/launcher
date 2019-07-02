@@ -13,11 +13,14 @@ use Symfony\Component\Process\Process;
 class TestLauncher extends Launcher
 {
     /**
-     * @var array
+     * @var string[]
      */
     private static $commands;
 
-    public static function getCommands()
+    /**
+     * @return string[]
+     */
+    public static function getCommands(): array
     {
         return self::$commands;
     }
@@ -34,11 +37,10 @@ class TestLauncher extends Launcher
         $commands = [];
 
         foreach ($resources as $resource) {
-            $command = $baseCommand;
-
-            $command[] = $resource;
-
-            $process = new Process($command);
+            $process = new Process([
+                $baseCommand,
+                $resource,
+            ]);
 
             $commands[] = $process->getCommandLine();
         }

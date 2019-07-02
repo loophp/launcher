@@ -25,11 +25,10 @@ class Launcher
         $baseCommand = self::getCommand();
 
         foreach ($resources as $resource) {
-            $command = $baseCommand;
-
-            $command[] = $resource;
-
-            $process = new Process($command);
+            $process = new Process([
+                $baseCommand,
+                $resource,
+            ]);
 
             $process->run();
 
@@ -44,12 +43,10 @@ class Launcher
      *
      * @throws \Exception
      *
-     * @return null|array
+     * @return string
      */
-    protected static function getCommand(): ?array
+    protected static function getCommand(): string
     {
-        $command = null;
-
         switch (PHP_OS_FAMILY) {
             case 'BSD':
             case 'Linux':
@@ -67,12 +64,13 @@ class Launcher
                 $command = 'start';
 
                 break;
+
+            default:
+                throw new \Exception('Unable to find the operating system.');
+
+                break;
         }
 
-        if (null === $command) {
-            throw new \Exception('Unable to find the operating system.');
-        }
-
-        return [$command];
+        return $command;
     }
 }
