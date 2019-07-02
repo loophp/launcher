@@ -6,7 +6,6 @@ namespace drupol\launcher;
 
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
-use Tivie\OS\Detector;
 
 /**
  * Class Launcher.
@@ -49,16 +48,25 @@ class Launcher
      */
     protected static function getCommand(): ?array
     {
-        $os = new Detector();
-
         $command = null;
 
-        if ($os->isOSX()) {
-            $command = 'open';
-        } elseif ($os->isUnixLike()) {
-            $command = 'xdg-open';
-        } elseif ($os->isWindowsLike()) {
-            $command = 'start';
+        switch (PHP_OS_FAMILY) {
+            case 'BSD':
+            case 'Linux':
+            case 'Solaris':
+                $command = 'xdg-open';
+
+                break;
+
+            case 'Darwin':
+                $command = 'open';
+
+                break;
+
+            case 'Windows':
+                $command = 'start';
+
+                break;
         }
 
         if (null === $command) {

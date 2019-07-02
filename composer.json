@@ -13,9 +13,9 @@
         }
     ],
     "require": {
-        "php": ">=7.1",
-        "symfony/process": "^4.3",
-        "tivie/php-os-detector": "^1.1"
+        "php": ">= 7.1",
+        "symfony/polyfill-php72": "^1.11",
+        "symfony/process": "^4.3"
     },
     "require-dev": {
         "drupol/php-conventions": "^1",
@@ -29,9 +29,6 @@
         "scrutinizer/ocular": "^1"
     },
     "config": {
-        "platform": {
-            "php": "7.1.28"
-        },
         "sort-packages": true
     },
     "autoload": {
