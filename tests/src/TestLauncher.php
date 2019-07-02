@@ -29,9 +29,7 @@ class TestLauncher extends Launcher
      */
     public static function open(string ...$resources): void
     {
-        if (null === $baseCommand = self::getCommand()) {
-            throw new \Exception('Unable to find the proper command for your operating system.');
-        }
+        $baseCommand = self::getCommand();
 
         $commands = [];
 

@@ -51,28 +51,18 @@ class Launcher
     {
         $os = new Detector();
 
-        $command = $checkCommand = null;
+        $command = null;
 
         if ($os->isOSX()) {
             $command = 'open';
-            $checkCommand = 'command -v';
         } elseif ($os->isUnixLike()) {
             $command = 'xdg-open';
-            $checkCommand = 'command -v';
         } elseif ($os->isWindowsLike()) {
             $command = 'start';
-            $checkCommand = 'where';
         }
 
         if (null === $command) {
             throw new \Exception('Unable to find the operating system.');
-        }
-
-        $process = new Process([$checkCommand . ' ' . $command]);
-        $process->run();
-
-        if (!$process->isSuccessful()) {
-            throw new ProcessFailedException($process);
         }
 
         return [$command];
