@@ -21,9 +21,9 @@
     "require-dev": {
         "drupol/php-conventions": "^1",
         "drupol/phpspec-annotation": "^1",
+        "drupol/phpspec-code-coverage": "^5",
         "infection/infection": "^0.13",
-        "leanphp/phpspec-code-coverage": "^4",
-        "phpspec/phpspec": "^4",
+        "phpspec/phpspec": "^5",
         "phptaskman/changelog": "^1.0",
         "scrutinizer/ocular": "^1"
     },
