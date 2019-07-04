@@ -16,16 +16,19 @@ class TestLauncherSpec extends ObjectBehavior
             case 'Linux':
             case 'Solaris':
                 $command = 'xdg-open';
+                $template = "'%s' '%s'";
 
                 break;
 
             case 'Darwin':
                 $command = 'open';
+                $template = "%s '%s'";
 
                 break;
 
             case 'Windows':
                 $command = 'start';
+                $template = '%s "%s"';
 
                 break;
 
@@ -38,7 +41,7 @@ class TestLauncherSpec extends ObjectBehavior
         $this::open('https://google.com', 'https://github.com');
 
         $this::getCommands()
-            ->shouldReturn(["{$command} 'https://google.com'", "{$command} 'https://github.com'"]);
+            ->shouldReturn([\sprintf($template, $command, 'https://google.com'), \sprintf($template, $command, 'https://github.com')]);
     }
 
     public function it_is_initializable()
