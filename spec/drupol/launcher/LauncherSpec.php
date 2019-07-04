@@ -12,8 +12,10 @@ class LauncherSpec extends ObjectBehavior
 {
     public function it_can_launch()
     {
-        $this::open('https://google.com')
-            ->shouldBeNull();
+        var_dump($this->getWrappedObject()::open('https://google.com'));
+
+        //$this::open('https://google.com')
+        //    ->shouldBeNull();
 
         $this
             ->shouldThrow(ProcessFailedException::class)
