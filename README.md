@@ -2,6 +2,7 @@
  [![GitHub stars](https://img.shields.io/github/stars/drupol/launcher.svg?style=flat-square)](https://packagist.org/packages/drupol/launcher)
  [![Total Downloads](https://img.shields.io/packagist/dt/drupol/launcher.svg?style=flat-square)](https://packagist.org/packages/drupol/launcher)
  [![Build Status](https://img.shields.io/travis/drupol/launcher/master.svg?style=flat-square)](https://travis-ci.org/drupol/launcher)
+ [![Build Status](https://img.shields.io/appveyor/ci/drupol/valuewrapper.svg?style=flat-square)](https://ci.appveyor.com/project/drupol/launcher)
  [![Scrutinizer code quality](https://img.shields.io/scrutinizer/quality/g/drupol/launcher/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/drupol/launcher/?branch=master)
  [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/drupol/launcher/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/drupol/launcher/?branch=master)
  [![Mutation testing badge](https://badge.stryker-mutator.io/github.com/drupol/launcher/master)](https://stryker-mutator.github.io)
