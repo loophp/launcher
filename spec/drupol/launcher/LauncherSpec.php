@@ -12,14 +12,15 @@ class LauncherSpec extends ObjectBehavior
 {
     public function it_can_launch()
     {
-        var_dump($this->getWrappedObject()::open('https://google.com'));
+        $this::open('https://google.com')
+            ->shouldBeNull();
 
-        //$this::open('https://google.com')
-        //    ->shouldBeNull();
-
-        $this
-            ->shouldThrow(ProcessFailedException::class)
-            ->during('open', [' lkjdslkjf /sdlkj +SD:glskgj ']);
+        // @todo: Get rid of this condition.
+        if (PHP_OS_FAMILY !== 'Windows') {
+            $this
+                ->shouldThrow(ProcessFailedException::class)
+                ->during('open', [' lè!&k//\\jds\lkjf- /sdlkj +SD:glskgj ']);
+        }
     }
 
     public function it_is_initializable()
