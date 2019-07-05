@@ -4,6 +4,8 @@ declare(strict_types = 1);
 
 namespace drupol\launcher;
 
+use drupol\phposinfo\Enum\Family;
+use drupol\phposinfo\OsInfo;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 
@@ -47,20 +49,19 @@ class Launcher
      */
     protected static function getCommand(): string
     {
-        switch (PHP_OS_FAMILY) {
-            case 'BSD':
-            case 'Linux':
-            case 'Solaris':
+        switch (OsInfo::family()) {
+            case Family::BSD:
+            case Family::LINUX:
                 $command = 'xdg-open';
 
                 break;
 
-            case 'Darwin':
+            case Family::DARWIN:
                 $command = 'open';
 
                 break;
 
-            case 'Windows':
+            case Family::WINDOWS:
                 $command = 'start';
 
                 break;
