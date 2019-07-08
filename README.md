@@ -7,7 +7,9 @@
  [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/drupol/launcher/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/drupol/launcher/?branch=master)
  [![Mutation testing badge](https://badge.stryker-mutator.io/github.com/drupol/launcher/master)](https://stryker-mutator.github.io)
  [![License](https://img.shields.io/packagist/l/drupol/launcher.svg?style=flat-square)](https://packagist.org/packages/drupol/launcher)
-
+ [![Say Thanks!](https://img.shields.io/badge/Say-thanks-brightgreen.svg?style=flat-square)](https://saythanks.io/to/drupol)
+ [![Donate!](https://img.shields.io/badge/Donate-Paypal-brightgreen.svg?style=flat-square)](https://paypal.me/drupol)
+ 
 # OS Launcher
 
 ## Description
