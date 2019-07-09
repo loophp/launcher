@@ -51,18 +51,18 @@ class Launcher
     protected static function getCommand(): string
     {
         switch (OsInfo::family()) {
-            case FamilyName::BSD:
-            case FamilyName::LINUX:
+            case Family::BSD:
+            case Family::LINUX:
                 $command = 'xdg-open';
 
                 break;
 
-            case FamilyName::DARWIN:
+            case Family::DARWIN:
                 $command = 'open';
 
                 break;
 
-            case FamilyName::WINDOWS:
+            case Family::WINDOWS:
                 $command = 'start';
 
                 break;

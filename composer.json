@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": ">= 7",
-        "drupol/phposinfo": "^1.2",
+        "drupol/phposinfo": "^1.3",
         "symfony/process": "^4.3"
     },
     "require-dev": {
