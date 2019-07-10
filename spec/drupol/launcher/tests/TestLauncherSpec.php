@@ -21,13 +21,11 @@ class TestLauncherSpec extends ObjectBehavior
             $template = "'%s' '%s'";
 
                 break;
-
             case FamilyName::DARWIN:
                 $command = 'open';
                 $template = "%s '%s'";
 
                 break;
-
             case FamilyName::WINDOWS:
                 $command = 'start';
                 $template = '%s "%s"';

@@ -56,12 +56,10 @@ class Launcher
                 $command = 'xdg-open';
 
                 break;
-
             case FamilyName::DARWIN:
                 $command = 'open';
 
                 break;
-
             case FamilyName::WINDOWS:
                 $command = 'start';
 
