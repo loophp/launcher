@@ -9,11 +9,11 @@ clone_folder: c:\projects\php-project-workspace
 environment:
     matrix:
         - php_ver_target: 7.1
-          XDEBUG_VERSION: 'https://xdebug.org/files/php_xdebug-2.8.0alpha1-7.1-vc14-nts-x86_64.dll'
+          XDEBUG_VERSION: 'php_xdebug-2.8.0alpha1-7.1-vc14-nts-x86_64.dll'
         - php_ver_target: 7.2
-          XDEBUG_VERSION: 'https://xdebug.org/files/php_xdebug-2.8.0alpha1-7.2-vc15-nts-x86_64.dll'
+          XDEBUG_VERSION: 'php_xdebug-2.8.0alpha1-7.2-vc15-nts-x86_64.dll'
         - php_ver_target: 7.3
-          XDEBUG_VERSION: 'https://xdebug.org/files/php_xdebug-2.8.0alpha1-7.3-vc15-nts-x86_64.dll'
+          XDEBUG_VERSION: 'php_xdebug-2.8.0alpha1-7.3-vc15-nts-x86_64.dll'
 
 ## Set up environment varriables
 init:
