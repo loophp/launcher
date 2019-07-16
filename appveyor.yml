@@ -1,4 +1,6 @@
 build: false
+clone_depth: 1
+
 platform:
     - x64
 clone_folder: c:\projects\php-project-workspace
@@ -7,8 +9,11 @@ clone_folder: c:\projects\php-project-workspace
 environment:
     matrix:
         - php_ver_target: 7.1
+          XDEBUG_VERSION: '2.5.5-7.1'
         - php_ver_target: 7.2
+          XDEBUG_VERSION: '2.5.5-7.1'
         - php_ver_target: 7.3
+          XDEBUG_VERSION: '2.5.5-7.1'
 
 ## Set up environment varriables
 init:
@@ -29,6 +34,8 @@ install:
     - IF %PHP%==1 echo extension=php_mbstring.dll >> php.ini
     - IF %PHP%==1 echo extension=php_fileinfo.dll >> php.ini
     - IF %PHP%==1 echo @php %%~dp0composer.phar %%* > composer.bat
+    - appveyor DownloadFile https://xdebug.org/files/php_xdebug-%XDEBUG_VERSION%-vc14.dll -FileName c:\tools\php\%PHP_VERSION%\ext\php_xdebug-%XDEBUG_VERSION%-vc14.dll
+    - echo zend_extension=php_xdebug-%XDEBUG_VERSION%-vc14.dll >> php.ini
     - appveyor-retry appveyor DownloadFile https://getcomposer.org/composer.phar
     - cd c:\projects\php-project-workspace
     - appveyor-retry composer self-update
