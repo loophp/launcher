@@ -45,4 +45,4 @@ install:
 ## Run the actual test
 test_script:
     - cd c:\projects\php-project-workspace
-    - composer grumphp
+    - phpdbg -qrr vendor\phpspec\phpspec\bin\phpspec run --no-code-generation -vvv
