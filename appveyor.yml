@@ -45,4 +45,4 @@ install:
 ## Run the actual test
 test_script:
     - cd c:\projects\php-project-workspace
-    - phpdbg -qrr vendor\phpspec\phpspec\bin\phpspec run --no-code-generation -vvv
+    - php vendor\phpspec\phpspec\bin\phpspec run
