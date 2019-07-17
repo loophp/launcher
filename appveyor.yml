@@ -5,6 +5,9 @@ platform:
     - x64
 clone_folder: c:\projects\php-project-workspace
 
+matrix:
+    fast_finish: true
+
 ## Build matrix for lowest and highest possible targets
 environment:
     matrix:
