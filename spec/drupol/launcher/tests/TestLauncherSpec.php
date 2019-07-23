@@ -43,8 +43,8 @@ class TestLauncherSpec extends ObjectBehavior
         $this::getCommands()
             ->shouldReturn(
                 [
-                    \sprintf($template, $command, 'https://google.com'),
-                    \sprintf($template, $command, 'https://github.com'),
+                    sprintf($template, $command, 'https://google.com'),
+                    sprintf($template, $command, 'https://github.com'),
                 ]
             );
     }
