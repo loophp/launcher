@@ -1,22 +1,12 @@
 build: false
-clone_depth: 1
-
 platform:
     - x64
 clone_folder: c:\projects\php-project-workspace
 
-matrix:
-    fast_finish: true
-
 ## Build matrix for lowest and highest possible targets
 environment:
     matrix:
-        - php_ver_target: 7.1
-          XDEBUG_VERSION: 'php_xdebug-2.8.0alpha1-7.1-vc14-nts-x86_64.dll'
-        - php_ver_target: 7.2
-          XDEBUG_VERSION: 'php_xdebug-2.8.0alpha1-7.2-vc15-nts-x86_64.dll'
         - php_ver_target: 7.3
-          XDEBUG_VERSION: 'php_xdebug-2.8.0alpha1-7.3-vc15-nts-x86_64.dll'
 
 ## Set up environment varriables
 init:
@@ -37,8 +27,6 @@ install:
     - IF %PHP%==1 echo extension=php_mbstring.dll >> php.ini
     - IF %PHP%==1 echo extension=php_fileinfo.dll >> php.ini
     - IF %PHP%==1 echo @php %%~dp0composer.phar %%* > composer.bat
-    - appveyor DownloadFile https://xdebug.org/files/%XDEBUG_VERSION% -FileName c:\tools\php\%PHP_VERSION%\ext\php_xdebug.dll
-    - echo zend_extension=php_xdebug.dll >> php.ini
     - appveyor-retry appveyor DownloadFile https://getcomposer.org/composer.phar
     - cd c:\projects\php-project-workspace
     - appveyor-retry composer self-update
@@ -48,4 +36,4 @@ install:
 ## Run the actual test
 test_script:
     - cd c:\projects\php-project-workspace
-    - php "./vendor/phpspec/phpspec/bin/phpspec" run
+    - phpdbg -qrr vendor\phpspec\phpspec\bin\phpspec run --no-code-generation -vvv
