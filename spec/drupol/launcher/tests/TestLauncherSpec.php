@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace spec\drupol\launcher\tests;
 
@@ -43,8 +43,8 @@ class TestLauncherSpec extends ObjectBehavior
         $this::getCommands()
             ->shouldReturn(
                 [
-                    sprintf($template, $command, 'https://google.com'),
-                    sprintf($template, $command, 'https://github.com'),
+                    \sprintf($template, $command, 'https://google.com'),
+                    \sprintf($template, $command, 'https://github.com'),
                 ]
             );
     }
