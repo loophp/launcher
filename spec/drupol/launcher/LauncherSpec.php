@@ -13,9 +13,9 @@ class LauncherSpec extends ObjectBehavior
     /**
      * @requires OSFAMILY Darwin
      */
-    public function it_can_launch_on_apple()
+    public function it_can_open_resources_on_apple()
     {
-        $this::open('https://google.com')
+        $this::open('https://google.com', '/')
             ->shouldBeNull();
 
         $this
@@ -26,9 +26,9 @@ class LauncherSpec extends ObjectBehavior
     /**
      * @requires OSFAMILY Linux
      */
-    public function it_can_launch_on_linux()
+    public function it_can_open_resources_on_linux()
     {
-        $this::open('https://google.com')
+        $this::open('https://google.com', '/')
             ->shouldBeNull();
 
         $this
@@ -39,9 +39,9 @@ class LauncherSpec extends ObjectBehavior
     /**
      * @requires OSFAMILY Windows
      */
-    public function it_can_launch_on_windows()
+    public function it_can_open_resources_on_windows()
     {
-        $this::open('https://google.com')
+        $this::open('https://google.com', 'C:\\')
             ->shouldBeNull();
     }
 
