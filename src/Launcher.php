@@ -48,7 +48,7 @@ final class Launcher
      *
      * @return string
      */
-    protected static function getCommand(): string
+    private static function getCommand(): string
     {
         switch (OsInfo::family()) {
             case FamilyName::BSD:
