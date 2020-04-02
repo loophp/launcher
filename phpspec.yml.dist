@@ -1,7 +1,8 @@
 formatter.name: pretty
 extensions:
+  FriendsOfPhpspec\PhpspecRequires\PhpspecRequires: ~
   drupol\PhpspecAnnotation\PhpspecAnnotation: ~
-  LeanPHP\PhpSpec\CodeCoverage\CodeCoverageExtension:
+  FriendsOfPhpspec\PhpSpec\CodeCoverage\CodeCoverageExtension:
     format:
       - html
       - clover

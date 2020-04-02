@@ -1,7 +1,7 @@
 {
-    "name": "drupol/launcher",
+    "name": "loophp/launcher",
     "type": "library",
-    "description": "Automatically open a file or a resource with the default OS application.",
+    "description": "Open a file or a resource with the default OS application.",
     "keywords": [
         "launcher",
         "xdg-open",
@@ -17,35 +17,32 @@
     "require": {
         "php": ">= 7.1.3",
         "drupol/phposinfo": "^1.6",
-        "symfony/process": "^4.3"
+        "symfony/process": "^4.3 || ^4.4 || ^5"
     },
     "require-dev": {
-        "drupol/php-conventions": "^1",
-        "drupol/phpspec-annotation": "^1",
-        "friends-of-phpspec/phpspec-code-coverage": "^4",
-        "infection/infection": "^0.13",
-        "phpspec/phpspec": "^5",
-        "phptaskman/changelog": "^1.0",
-        "scrutinizer/ocular": "^1"
+        "drupol/php-conventions": "^1.6.15",
+        "drupol/phpspec-annotation": "^1.2.0",
+        "drupol/phpspec-requires": "^1.1",
+        "friends-of-phpspec/phpspec-code-coverage": "^4.3.2",
+        "friends-of-phpspec/phpspec-requires": "^1.1",
+        "phpspec/phpspec": "^5.1.2 || ^6.1.1",
+        "phptaskman/changelog": "^1.0"
     },
     "config": {
         "sort-packages": true
     },
     "autoload": {
         "psr-4": {
-            "drupol\\launcher\\": "src/"
+            "loophp\\launcher\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "drupol\\launcher\\tests\\": "tests/src/"
+            "loophp\\launcher\\tests\\": "tests/src/"
         }
     },
     "scripts": {
-        "apigen": "./vendor/bin/apigen generate src --destination build/docs",
-        "bench": "./vendor/bin/phpbench run --report=aggregate --store --precision=3",
         "grumphp": "./vendor/bin/grumphp run",
-        "infection": "./vendor/bin/infection run -j 10",
-        "scrutinizer": "./vendor/bin/ocular code-coverage:upload --format=php-clover build/logs/clover.xml"
+        "infection": "./vendor/bin/infection run -j 10"
     }
 }
