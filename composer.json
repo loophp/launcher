@@ -25,7 +25,6 @@
         "drupol/phpspec-requires": "^1.1",
         "friends-of-phpspec/phpspec-code-coverage": "^4.3.2",
         "friends-of-phpspec/phpspec-requires": "^1.1",
-        "infection/infection": "^0.13.6 || ^0.15.0",
         "phpspec/phpspec": "^5.1.2 || ^6.1.1",
         "phptaskman/changelog": "^1.0"
     },
