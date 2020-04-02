@@ -22,6 +22,10 @@ jobs:
               with:
                   fetch-depth: 1
 
+            - name: Install browser
+              if: matrix.operating-system == 'ubuntu-latest'
+              run: apt-get install w3m
+
             - name: Install PHP
               uses: shivammathur/setup-php@master
               with:
@@ -41,6 +45,9 @@ jobs:
 
             - name: Install dependencies
               run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
+
+            - name: Run PHPSpec
+              run: vendor/bin/phpspec run -vvv
 
             - name: Run Grumphp
               run: vendor/bin/grumphp run
