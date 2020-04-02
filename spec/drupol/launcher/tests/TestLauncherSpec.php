@@ -23,7 +23,7 @@ class TestLauncherSpec extends ObjectBehavior
                 break;
             case FamilyName::DARWIN:
                 $command = 'open';
-                $template = "%s '%s'";
+                $template = "'%s' '%s'";
 
                 break;
             case FamilyName::WINDOWS:
