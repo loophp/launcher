@@ -33,7 +33,7 @@ class LauncherSpec extends ObjectBehavior
 
         $this
             ->shouldThrow(ProcessFailedException::class)
-            ->during('xdg-open', [' lè!&k//\\jds\lkjf- /sdlkj +SD:glskgj ']);
+            ->during('open', [' lè!&k//\\jds\lkjf- /sdlkj +SD:glskgj ']);
     }
 
     /**
@@ -46,7 +46,7 @@ class LauncherSpec extends ObjectBehavior
 
         $this
             ->shouldThrow(ProcessFailedException::class)
-            ->during('start', [' lè!&k//\\jds\lkjf- /sdlkj +SD:glskgj ']);
+            ->during('open', [' lè!&k//\\jds\lkjf- /sdlkj +SD:glskgj ']);
     }
 
     public function it_is_initializable()
