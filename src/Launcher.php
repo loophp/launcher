@@ -13,7 +13,7 @@ use Symfony\Component\Process\Process;
 /**
  * Class Launcher.
  */
-class Launcher
+final class Launcher
 {
     /**
      * Open a resource on your operating system.
