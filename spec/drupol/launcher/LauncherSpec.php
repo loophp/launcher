@@ -11,7 +11,7 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 class LauncherSpec extends ObjectBehavior
 {
     /**
-     * @requires OS Darwin
+     * @requires OSFAMILY Darwin
      */
     public function it_can_launch_on_apple()
     {
@@ -24,7 +24,7 @@ class LauncherSpec extends ObjectBehavior
     }
 
     /**
-     * @requires OS Linux
+     * @requires OSFAMILY Linux
      */
     public function it_can_launch_on_linux()
     {
@@ -37,7 +37,7 @@ class LauncherSpec extends ObjectBehavior
     }
 
     /**
-     * @requires OS Windows
+     * @requires OSFAMILY Windows
      */
     public function it_can_launch_on_windows()
     {
