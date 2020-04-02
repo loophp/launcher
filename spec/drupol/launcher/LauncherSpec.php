@@ -43,10 +43,6 @@ class LauncherSpec extends ObjectBehavior
     {
         $this::open('https://google.com')
             ->shouldBeNull();
-
-        $this
-            ->shouldThrow(ProcessFailedException::class)
-            ->during('open', [' lè!&k//\\jds\lkjf- /sdlkj +SD:glskgj ']);
     }
 
     public function it_is_initializable()
