@@ -21,6 +21,7 @@
     },
     "require-dev": {
         "drupol/php-conventions": "^1.6.15",
+        "drupol/phpspec-annotation": "^1.2.0",
         "friends-of-phpspec/phpspec-code-coverage": "^4.3.2",
         "infection/infection": "^0.13.6 || ^0.15.0",
         "phpspec/phpspec": "^5.1.2 || ^6.1.1",
