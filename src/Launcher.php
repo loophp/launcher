@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace drupol\launcher;
+namespace loophp\launcher;
 
 use drupol\phposinfo\Enum\FamilyName;
 use drupol\phposinfo\OsInfo;

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace spec\drupol\launcher;
+namespace spec\loophp\launcher;
 
-use drupol\launcher\Launcher;
+use loophp\launcher\Launcher;
 use PhpSpec\ObjectBehavior;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 

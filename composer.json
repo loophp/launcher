@@ -1,7 +1,7 @@
 {
-    "name": "drupol/launcher",
+    "name": "loophp/launcher",
     "type": "library",
-    "description": "Automatically open a file or a resource with the default OS application.",
+    "description": "Open a file or a resource with the default OS application.",
     "keywords": [
         "launcher",
         "xdg-open",
@@ -33,12 +33,12 @@
     },
     "autoload": {
         "psr-4": {
-            "drupol\\launcher\\": "src/"
+            "loophp\\launcher\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "drupol\\launcher\\tests\\": "tests/src/"
+            "loophp\\launcher\\tests\\": "tests/src/"
         }
     },
     "scripts": {
