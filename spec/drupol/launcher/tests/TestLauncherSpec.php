@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace spec\drupol\launcher\tests;
 
 use drupol\launcher\tests\TestLauncher;
-use drupol\phposinfo\Enum\Family;
 use drupol\phposinfo\Enum\FamilyName;
 use drupol\phposinfo\OsInfo;
+use Exception;
 use PhpSpec\ObjectBehavior;
 
 class TestLauncherSpec extends ObjectBehavior
@@ -33,7 +33,7 @@ class TestLauncherSpec extends ObjectBehavior
                 break;
 
             default:
-                throw new \Exception('Unable to find the operating system.');
+                throw new Exception('Unable to find the operating system.');
 
                 break;
         }
@@ -43,8 +43,8 @@ class TestLauncherSpec extends ObjectBehavior
         $this::getCommands()
             ->shouldReturn(
                 [
-                    \sprintf($template, $command, 'https://google.com'),
-                    \sprintf($template, $command, 'https://github.com'),
+                    sprintf($template, $command, 'https://google.com'),
+                    sprintf($template, $command, 'https://github.com'),
                 ]
             );
     }

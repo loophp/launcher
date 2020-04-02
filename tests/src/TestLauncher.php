@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace drupol\launcher\tests;
 
 use drupol\launcher\Launcher;
+use Exception;
 use Symfony\Component\Process\Process;
 
 /**
@@ -28,7 +29,7 @@ class TestLauncher extends Launcher
     /**
      * @param string ...$resources
      *
-     * @throws \Exception
+     * @throws Exception
      */
     public static function open(string ...$resources): void
     {

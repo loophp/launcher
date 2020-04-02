@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace drupol\launcher;
 
-use drupol\phposinfo\Enum\Family;
 use drupol\phposinfo\Enum\FamilyName;
 use drupol\phposinfo\OsInfo;
+use Exception;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 
@@ -21,7 +21,7 @@ class Launcher
      * @param string ...$resources
      *   The resource. (URL, filepath, etc etc)
      *
-     * @throws \Exception
+     * @throws Exception
      */
     public static function open(string ...$resources): void
     {
@@ -44,7 +44,7 @@ class Launcher
     /**
      * Get the command to run.
      *
-     * @throws \Exception
+     * @throws Exception
      *
      * @return string
      */
@@ -66,9 +66,7 @@ class Launcher
                 break;
 
             default:
-                throw new \Exception('Unable to find the operating system.');
-
-                break;
+                throw new Exception('Unable to find the operating system.');
         }
 
         return $command;
