@@ -24,7 +24,7 @@ jobs:
 
             - name: Install browser
               if: matrix.operating-system == 'ubuntu-latest'
-              run: apt-get install w3m
+              run: sudo apt-get install w3m
 
             - name: Install PHP
               uses: shivammathur/setup-php@master
