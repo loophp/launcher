@@ -57,8 +57,6 @@ Feel free to check them out in the `spec` directory. Run `composer phpspec` to t
 
 Before each commit some inspections are executed with [GrumPHP](https://github.com/phpro/grumphp), run `./vendor/bin/grumphp run` to check manually.
 
-[PHPInfection](https://github.com/infection/infection) is used to ensure that your code is properly tested, run `composer infection` to test your code.
-
 ## Contributing
 
 Feel free to contribute to this library by sending Github pull requests. I'm quite reactive :-)
