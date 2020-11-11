@@ -10,9 +10,6 @@ use Exception;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 
-/**
- * Class Launcher.
- */
 final class Launcher
 {
     /**
@@ -45,8 +42,6 @@ final class Launcher
      * Get the command to run.
      *
      * @throws Exception
-     *
-     * @return string
      */
     private static function getCommand(): string
     {
