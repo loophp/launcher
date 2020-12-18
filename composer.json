@@ -23,7 +23,7 @@
         "drupol/php-conventions": "^2.0.2 || ^3.0.0",
         "drupol/phpspec-annotation": "^1.2.0",
         "drupol/phpspec-requires": "^1.1",
-        "friends-of-phpspec/phpspec-code-coverage": "^4.3.2",
+        "friends-of-phpspec/phpspec-code-coverage": "^4.3.2 || ^6.0.0",
         "friends-of-phpspec/phpspec-requires": "^1.1",
         "phpspec/phpspec": "^6.3",
         "phptaskman/changelog": "^1.0"
